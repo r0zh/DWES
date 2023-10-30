@@ -3,7 +3,7 @@ services:
     build: .
     container_name: dwes-web
     volumes:
-      - ./html:/var/www/html
+      - ../.:/var/www/html
     ports:
       - '80:80'
     links:

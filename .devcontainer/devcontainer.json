@@ -17,5 +17,11 @@
 		3306,
 		8000,
 		9001
-	]
+	],
+	"features": {
+    		"ghcr.io/devcontainers/features/sshd:1": {
+        		"version": "latest"
+    		}
+	}
+
 }
