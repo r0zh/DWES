@@ -38,3 +38,5 @@ services:
       - 'portainer_data:/data'
     ports:
       - '9001:9000'
+volumes:
+  portainer_data:
