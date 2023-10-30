@@ -1,5 +1,5 @@
 <?php
-// Ejemplo commit
+// Ejemplo commits
 class Persona
 {
     private $nombre;
