@@ -11,5 +11,11 @@
 				"felixfbecker.php-pack"
 			]
 		}
-	}
+	},
+	"forwardPorts": [
+		80,
+		3306,
+		8000,
+		9001
+	]
 }
