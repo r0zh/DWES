@@ -1,0 +1,15 @@
+{
+	"name": "PHP Dev Container",
+	"service": "web",
+	"dockerComposeFile": [
+		"./docker-compose.yaml"
+	],
+	"workspaceFolder": "/var/www/html",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"felixfbecker.php-pack"
+			]
+		}
+	}
+}

@@ -1,0 +1,30 @@
+services:
+  web:
+    build: .
+    container_name: dwes-web
+    volumes:
+      - ./html:/var/www/html:z
+    ports:
+      - '80:80'
+    links:
+      - 'db:database'
+
+  db:
+    image: 'mysql:latest'
+    container_name: dwes-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: series
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    ports:
+      - '3306:3306'
+
+  phpmyadmin:
+    image: 'phpmyadmin:latest'
+    container_name: dwes-phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+    ports:
+      - '8000:80'
