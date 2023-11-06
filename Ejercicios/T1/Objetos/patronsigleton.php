@@ -11,7 +11,7 @@ class Singleton
     public static function getInstance(): Singleton
     {
         if (self::$instance == null) {
-            self::$instance = new Singleton();
+            self::$instance = new Singleton;
         }
         return self::$instance;
     }
@@ -24,5 +24,5 @@ class Singleton
 
 // Example usage:
 $singleton = Singleton::getInstance();
-echo ·
+print_r($singleton);
 ?>
