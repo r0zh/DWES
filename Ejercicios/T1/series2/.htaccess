@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^series2/Serie/listado$ /Ejercicios/T1/series2/index.php?m=Serie&f=listado [L]

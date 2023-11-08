@@ -3,6 +3,9 @@ echo "<h1>Fibonacci series</h1>";
 global $num1;
 global $num2;
 
+/**
+ * Initializes the variables of the series
+ */
 function initSerie(): void
 {
     global $num1;
@@ -13,7 +16,6 @@ function initSerie(): void
     echo "{$num2}</br>";
 }
 
-// Serie de fibonacci con un for
 echo "<h3>Con un for</h3>";
 
 initSerie();
@@ -27,9 +29,13 @@ for ($i = 0; $i < 10; $i++) {
 echo "</br></br>";
 
 
-// Serie de fibonacci con una funcion recursiva
 echo "<h3>Con funcion</h3>";
 initSerie();
+
+/**
+ * Prints the next number in the serie
+ * @param int $num
+ */
 function serieFibonacci(int $num): void
 {
     global $num1;
@@ -48,9 +54,9 @@ serieFibonacci(9);
 function fibonacci(int $n): int
 {
     if ($n == 0)
-        return 1; // caso base
+        return 1; 
     else if ($n == 1)
-        return 1; // caso base
+        return 1; 
     else
         return fibonacci($n - 1) + fibonacci($n - 2);
 }
