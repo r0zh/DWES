@@ -6,13 +6,13 @@ services:
       - ../.:/var/www/html
     ports:
       - '80:80'
-    links:
-      - 'db:database'
 
   db:
     image: 'mysql:latest'
     container_name: dwes-db
     restart: always
+    volumes:
+      - db-data:/var/lib/mysql
     environment:
       MYSQL_DATABASE: series
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
@@ -24,7 +24,7 @@ services:
     container_name: dwes-phpmyadmin
     restart: always
     environment:
-      PMA_HOST: db
+      PMA_HOST: dwes-db
       PMA_USER: root
     ports:
       - '8000:80'
@@ -38,5 +38,12 @@ services:
       - 'portainer_data:/data'
     ports:
       - '9443:9000'
+
 volumes:
+  db-data:
+    driver: local
+    driver_opts:
+      type: none
+      device: ./db
+      o: bind
   portainer_data:
